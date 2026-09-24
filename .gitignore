@@ -1,0 +1,18 @@
+# Environments and caches
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.DS_Store
+
+# The dataset: about 800 MB, and reproducible with
+#   python code/run_all.py download
+data/
+
+# Trained weights: 45 to 234 MB each, past GitHub's 100 MB file limit. Use a release or
+# Git LFS if one ever needs sharing; python code/train.py --arch <depth> rebuilds it.
+results/checkpoints/
+*.pt
+*.pth
+
+# Run logs: noise, and regenerable.
+results/logs/

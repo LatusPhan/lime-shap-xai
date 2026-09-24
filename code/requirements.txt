@@ -1,0 +1,21 @@
+# Install torch and torchvision first, with the selector at pytorch.org/get-started/locally.
+# Windows with an NVIDIA GPU needs a CUDA build, which looks like:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+# Then check the GPU is really there:
+#   python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+
+numpy>=2.0          # np.trapezoid, used by the deletion and insertion curves
+scipy>=1.10
+pandas>=2.0
+scikit-learn>=1.3
+scikit-image==0.25.2
+pillow>=10
+lime==0.2.0.1
+shap>=0.47
+
+# Three quirks of this stack, measured rather than assumed:
+#   1. lime 0.2.0.1 has no progress_bar argument. Passing one raises.
+#   2. scikit-image 0.25 renamed quickshift's random_seed to rng, and lime filters the
+#      unknown argument out. So the superpixels are identical on every run and machine.
+#      Do not downgrade scikit-image below 0.23: those versions need numpy 1.
+#   3. Since shap 0.47 KernelExplainer keeps only 10 features unless l1_reg=False.
