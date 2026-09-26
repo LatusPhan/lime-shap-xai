@@ -97,7 +97,10 @@ def images_for(model, arch, split):
 
 def result_files(stage, model, arch):
     folder = RESULTS / stage
-    return sorted(folder.glob(f"{model}_{arch}*.csv")) if folder.is_dir() else []
+    if not folder.is_dir():
+        return []
+    # a range that has only just started may not have written its header yet
+    return sorted(path for path in folder.glob(f"{model}_{arch}*.csv") if path.stat().st_size)
 
 
 def load(stage, model, arch):
@@ -149,6 +152,7 @@ def run(stage, args, explain_one, methods):
     writer = csv.DictWriter(handle, fieldnames=FIELDS, restval="")
     if fresh:
         writer.writeheader()
+        handle.flush()  # at once, so a range starting alongside never meets an empty file
     print(f"{stage} {stem} on {device.type}: {len(todo)} images to explain with "
           f"{', '.join(methods)}, batch {args.batch} -> {out.name}", flush=True)
     started = time.perf_counter()
