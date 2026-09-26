@@ -152,6 +152,7 @@ def run(stage, args, explain_one, methods):
     print(f"{stage} {stem} on {device.type}: {len(todo)} images to explain with "
           f"{', '.join(methods)}, batch {args.batch} -> {out.name}", flush=True)
     started = time.perf_counter()
+    failures = 0
 
     for count, row in enumerate(todo.itertuples(), 1):
         tick = time.perf_counter()
@@ -161,7 +162,11 @@ def run(stage, args, explain_one, methods):
             records = explain_one(dataset.array(position), dataset.mask(position), batch_predict)
         except Exception as error:  # no row is written, so the next launch retries this image
             print(f"[{count}/{len(todo)}] {row.image:32s} FAILED  {error!r}", flush=True)
+            failures += 1
+            if failures == 10:  # a systematic fault, such as the GPU running out of memory
+                raise SystemExit("10 images failed in a row; stopping this range")
             continue
+        failures = 0
         total = round(time.perf_counter() - tick, 2)
         for record in records:
             writer.writerow({"split": row.split, "position": position, "image": row.image,

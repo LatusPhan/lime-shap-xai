@@ -44,23 +44,36 @@ about the method rather than the budget.
 
 ## Running it
 
-One command for the whole local run, which never retrains and resumes if stopped:
+Every model, LIME and both SHAP methods over the whole test split, then the summaries
+and the figures. The same line works in PowerShell, zsh and bash:
 
 ```bash
-nohup caffeinate -is bash run_local.sh resnet50 > results/logs/run_local.log 2>&1 &
+python code/run_all.py all --models finetuned baseline --archs resnet50 resnet18 resnet34 resnet101 resnet152 --batch 128 --parallel 4 --stability 200
+```
+
+Nothing is done twice. Checkpoints are kept unless `--retrain`, predictions tables unless
+`--rescore`, and the explainers resume image by image, so the same line picks up where a
+stopped run left off. Models run in the order given. Each range writes its own log,
+`results/logs/<stage>_<model>_<arch>_<start>.log`.
+
+On the Mac, `run_local.sh` wraps the same run with two checks first:
+
+```bash
+mkdir -p results/logs
+nohup caffeinate -is bash run_local.sh >> results/logs/run_local.log 2>&1 &
 tail -f results/logs/run_local.log
 ```
 
-It checks the stack, reproduces the 24 stored records, scores the model if its table is
-missing, runs LIME and SHAP over the test split in parallel ranges, then writes the
-summaries and the figures. `BATCH=128 PARALLEL=4 bash run_local.sh resnet50` suits a
-machine with a GPU. On Windows call the stages through `run_all.py` instead.
+It checks the stack and reproduces the 24 stored records. Then it runs ResNet-50 and the
+baseline, writes their summaries and figures, and only then starts the other four depths.
+`bash run_local.sh resnet101` runs one depth. `BATCH=128 PARALLEL=4` in front suits a
+machine with a GPU.
 
 Stage by stage:
 
 ```bash
 python code/run_all.py download
-python code/run_all.py train   --archs resnet50
+python code/run_all.py train   --archs resnet50        # skipped if the checkpoint exists
 python code/run_all.py score   --archs resnet50
 python code/run_all.py explain --archs resnet50 --batch 128 --parallel 4 --stability 200
 python code/run_all.py report  --archs resnet50
@@ -97,17 +110,22 @@ Useful facts:
 - A `--first/--last` range writes its own file, so ranges can run side by side on one
   machine or across machines. Put the CSVs in one folder before `report.py`.
 - The image order is a fixed shuffle, so a partial run is still a random sample.
-- `--model baseline` explains the stock ImageNet ResNet-50 over both splits.
-  `--model finetuned --arch <depth>` explains a trained checkpoint over the test split.
+- The baseline is the stock ImageNet ResNet-50. It is explained over the test split like
+  the fine-tuned models. `--split both` adds the 3,680 trainval images, which it has never
+  seen either.
+- A range that fails ten images in a row stops, so a fault such as the GPU running out of
+  memory shows up as a failed range instead of a quietly empty one.
 
 ## Windows
 
-- Install Python 3.11 or 3.12, then torch from the selector at pytorch.org. With an
-  NVIDIA card pick a CUDA build, then check `torch.cuda.is_available()` is `True`.
+- Install Python 3.12, then torch with a CUDA build. `code/requirements.txt` says which
+  one from what `nvidia-smi` prints. Check `torch.cuda.is_available()` is `True`.
 - `pip install -r code/requirements.txt` for the rest.
 - Nothing here needs bash. `run_all.py` starts the parallel ranges itself.
 - If the training loaders hang, pass `--workers 0`.
 - Turn off sleep while a long run is going. There is no `caffeinate` on Windows.
+- Follow one range with `Get-Content results/logs/lime_run_finetuned_resnet50_0.log -Tail 3 -Wait`.
+- If a log shows CUDA out of memory, start again with `--batch 64`.
 - Paths are worked out from the file locations, so the folder can be renamed or moved.
   The dataset is the exception: download it again, or pass `--data-root`.
 - On the Mac, `data/oxford-iiit-pet` is a link to the copy in `../lime_method/data`, so
@@ -115,8 +133,8 @@ Useful facts:
 
 ## Moving this folder to another machine
 
-Copy `xai/` without `data/`, `results/logs/` and any `__pycache__`. The checkpoints are
-the large part, about 630 MB for all five. On the new machine:
+Clone the repository, then copy the five checkpoints into `results/checkpoints/`. They are
+not in git, being about 630 MB. On the new machine:
 
 ```bash
 python code/run_all.py download
@@ -124,7 +142,9 @@ python code/lime_run.py --check
 ```
 
 `check` re-explains the 24 stored records and compares them with the saved weights. It is
-the quickest proof that the new machine explains exactly like the old one.
+the quickest proof that the new machine explains like the old one. A different GPU or
+torch version changes the last digits of the weights, so the exact count can fall short
+there. The second count, same superpixels, class and top five, should still be 24/24.
 
 ## Results already here
 

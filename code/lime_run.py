@@ -74,7 +74,7 @@ def check(batch):
     paths = sorted(RECORDS.glob("*.npz"))
     if not paths:
         raise SystemExit(f"no records in {RECORDS}")
-    exact = 0
+    exact = equivalent = 0
     for path in paths:
         stored = np.load(path, allow_pickle=True)
         meta = json.loads(str(stored["meta"]))
@@ -85,10 +85,14 @@ def check(batch):
                 "segments": np.array_equal(segments, stored["segments"]),
                 "label": label == meta["lime_label"]}
         gap = float(np.abs(weights - stored["weights"]).max()) if same["segments"] else float("inf")
+        top = same["segments"] and (set(metrics.top_positive(weights))
+                                    == set(metrics.top_positive(stored["weights"])))
         exact += all(same.values()) and gap < 1e-6
+        equivalent += all(same.values()) and top
         print(f"{meta['image']:32s} " + "  ".join(f"{k} {v!s:5s}" for k, v in same.items())
-              + f"  max weight gap {gap:.1e}", flush=True)
-    print(f"{exact}/{len(paths)} stored records reproduced exactly")
+              + f"  top five {top!s:5s}  max weight gap {gap:.1e}", flush=True)
+    print(f"{exact}/{len(paths)} reproduced exactly, "
+          f"{equivalent}/{len(paths)} with the same superpixels, class and top five")
 
 
 if __name__ == "__main__":

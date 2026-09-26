@@ -98,10 +98,10 @@ def gather(model, arch):
     return frame.reset_index(drop=True)
 
 
-def expected_count(model, arch):
-    """How many images the split holds, when the predictions table is at hand."""
+def expected_count(model, arch, splits):
+    """How many images the explained split holds, when the predictions table is at hand."""
     try:
-        return len(runner.images_for(model, arch, "both" if model == "baseline" else "test"))
+        return len(runner.images_for(model, arch, splits[0] if len(splits) == 1 else "both"))
     except SystemExit:
         return None
 
@@ -116,7 +116,7 @@ def summarise(model, arch, frame):
 
     summary = {"model": model, "arch": arch,
                "images": int(frame.image.nunique()),
-               "expected": expected_count(model, arch),
+               "expected": expected_count(model, arch, frame.split.dropna().unique()),
                "devices": sorted(frame.device.dropna().astype(str).unique()),
                "methods": {}, "right_vs_wrong": {}, "paired": {}, "agreement": {}, "stability": {}}
 

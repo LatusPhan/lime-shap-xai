@@ -1,6 +1,8 @@
-# Install torch and torchvision first, with the selector at pytorch.org/get-started/locally.
-# Windows with an NVIDIA GPU needs a CUDA build, which looks like:
-#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+# Install torch and torchvision first. Windows or Linux with an NVIDIA GPU needs a CUDA
+# build. `nvidia-smi` prints the highest CUDA version the driver supports, top right:
+#   13.0 or higher:  pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+#   12.x:            pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+# An RTX 50-series card needs cu130, so update the driver first if it shows 12.x.
 # Then check the GPU is really there:
 #   python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 
@@ -10,6 +12,7 @@ pandas>=2.0
 scikit-learn>=1.3
 scikit-image==0.25.2
 pillow>=10
+matplotlib>=3.8   # the figures
 lime==0.2.0.1
 shap>=0.47
 
