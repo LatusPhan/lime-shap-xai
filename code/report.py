@@ -95,6 +95,9 @@ def gather(model, arch):
                 cache[key] = float(datasets[row.split].mask(int(row.position)).mean())
         frame.loc[blank, "area"] = [cache[(r.split, r.image)] for r in frame[blank].itertuples()]
         frame.loc[blank, "excess"] = frame.loc[blank, "overlap"] - frame.loc[blank, "area"]
+    # an empty or full trimap forces overlap to 0 or 1, so it says nothing about the explanation.
+    # 23 trimaps in the dataset are empty, 7 of them in the test split
+    frame.loc[~frame.area.between(0, 1, inclusive="neither"), ["overlap", "excess"]] = np.nan
     return frame.reset_index(drop=True)
 
 
@@ -172,7 +175,7 @@ def main(archs, models):
             path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
             for method, block in summary["methods"].items():
                 table.append({"model": f"{model}_{arch}", "method": method,
-                              "images": block["overlap"]["n"],
+                              "images": int(frame.method.eq(method).sum()),
                               **{c: block[c].get("mean") for c in
                                  ("overlap", "excess", "deletion", "insertion", "additivity")},
                               "median_runtime_s": block["runtime_s"].get("median"),

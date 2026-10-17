@@ -1,0 +1,127 @@
+figure,model,series,metric,count,mean,lo,hi
+agreement,ResNet-18,kernel,rank_correlation,3668,0.6225,0.6174,0.6275
+agreement,ResNet-18,kernel,top5_jaccard,3668,0.6505,0.6431,0.6579
+agreement,ResNet-18,partition,rank_correlation,3668,0.5687,0.5636,0.5737
+agreement,ResNet-18,partition,top5_jaccard,3668,0.5444,0.5372,0.5515
+agreement,ResNet-34,kernel,rank_correlation,3669,0.6188,0.6139,0.6236
+agreement,ResNet-34,kernel,top5_jaccard,3669,0.6529,0.6454,0.6603
+agreement,ResNet-34,partition,rank_correlation,3669,0.5538,0.5487,0.559
+agreement,ResNet-34,partition,top5_jaccard,3669,0.5282,0.5211,0.5353
+agreement,ResNet-50,kernel,rank_correlation,3669,0.6508,0.6465,0.6552
+agreement,ResNet-50,kernel,top5_jaccard,3669,0.709,0.7021,0.7158
+agreement,ResNet-50,partition,rank_correlation,3669,0.6467,0.6422,0.6511
+agreement,ResNet-50,partition,top5_jaccard,3669,0.5769,0.5701,0.5837
+agreement,ResNet-101,kernel,rank_correlation,3667,0.6515,0.6472,0.6558
+agreement,ResNet-101,kernel,top5_jaccard,3667,0.6874,0.6806,0.6942
+agreement,ResNet-101,partition,rank_correlation,3667,0.639,0.6348,0.6432
+agreement,ResNet-101,partition,top5_jaccard,3667,0.5524,0.5457,0.5591
+agreement,ResNet-152,kernel,rank_correlation,3669,0.6582,0.6541,0.6624
+agreement,ResNet-152,kernel,top5_jaccard,3669,0.6474,0.6405,0.6543
+agreement,ResNet-152,partition,rank_correlation,3669,0.7129,0.7092,0.7166
+agreement,ResNet-152,partition,top5_jaccard,3669,0.5662,0.5595,0.5728
+agreement,Stock ResNet-50,kernel,rank_correlation,3668,0.7049,0.7007,0.709
+agreement,Stock ResNet-50,kernel,top5_jaccard,3668,0.6501,0.6429,0.6572
+agreement,Stock ResNet-50,partition,rank_correlation,3668,0.4095,0.4034,0.4155
+agreement,Stock ResNet-50,partition,top5_jaccard,3668,0.372,0.3657,0.3784
+metrics,ResNet-18,kernel,deletion,3668,0.1268,0.1235,0.1301
+metrics,ResNet-18,kernel,insertion,3668,0.7018,0.6954,0.7083
+metrics,ResNet-18,kernel,overlap,3661,0.8416,0.8358,0.8475
+metrics,ResNet-18,lime,deletion,3668,0.1309,0.1277,0.1341
+metrics,ResNet-18,lime,insertion,3668,0.72,0.7137,0.7263
+metrics,ResNet-18,lime,overlap,3661,0.8439,0.8379,0.8498
+metrics,ResNet-18,partition,deletion,3668,0.15,0.1462,0.1539
+metrics,ResNet-18,partition,insertion,3668,0.679,0.6726,0.6854
+metrics,ResNet-18,partition,overlap,3661,0.8308,0.8248,0.8367
+metrics,ResNet-34,kernel,deletion,3669,0.1235,0.1204,0.1267
+metrics,ResNet-34,kernel,insertion,3669,0.7011,0.6949,0.7073
+metrics,ResNet-34,kernel,overlap,3662,0.8441,0.8383,0.8499
+metrics,ResNet-34,lime,deletion,3669,0.1274,0.1243,0.1305
+metrics,ResNet-34,lime,insertion,3669,0.7186,0.7127,0.7245
+metrics,ResNet-34,lime,overlap,3662,0.8431,0.8373,0.849
+metrics,ResNet-34,partition,deletion,3669,0.1513,0.1474,0.1551
+metrics,ResNet-34,partition,insertion,3669,0.6714,0.6651,0.6777
+metrics,ResNet-34,partition,overlap,3662,0.82,0.814,0.8261
+metrics,ResNet-50,kernel,deletion,3669,0.2053,0.2011,0.2095
+metrics,ResNet-50,kernel,insertion,3669,0.852,0.8484,0.8555
+metrics,ResNet-50,kernel,overlap,3662,0.8487,0.8432,0.8543
+metrics,ResNet-50,lime,deletion,3669,0.1954,0.1915,0.1993
+metrics,ResNet-50,lime,insertion,3669,0.8573,0.8539,0.8606
+metrics,ResNet-50,lime,overlap,3662,0.8586,0.8532,0.8639
+metrics,ResNet-50,partition,deletion,3669,0.2286,0.2241,0.2332
+metrics,ResNet-50,partition,insertion,3669,0.8282,0.8241,0.8323
+metrics,ResNet-50,partition,overlap,3662,0.8377,0.832,0.8434
+metrics,ResNet-101,kernel,deletion,3667,0.2354,0.2305,0.2403
+metrics,ResNet-101,kernel,insertion,3667,0.8647,0.8615,0.868
+metrics,ResNet-101,kernel,overlap,3660,0.8306,0.825,0.8363
+metrics,ResNet-101,lime,deletion,3667,0.2182,0.2138,0.2227
+metrics,ResNet-101,lime,insertion,3667,0.8686,0.8656,0.8716
+metrics,ResNet-101,lime,overlap,3660,0.8417,0.8362,0.8473
+metrics,ResNet-101,partition,deletion,3667,0.2625,0.2573,0.2677
+metrics,ResNet-101,partition,insertion,3667,0.8447,0.841,0.8483
+metrics,ResNet-101,partition,overlap,3660,0.8106,0.8046,0.8166
+metrics,ResNet-152,kernel,deletion,3669,0.2365,0.2319,0.2411
+metrics,ResNet-152,kernel,insertion,3669,0.7715,0.7675,0.7755
+metrics,ResNet-152,kernel,overlap,3662,0.8032,0.7973,0.8091
+metrics,ResNet-152,lime,deletion,3669,0.2203,0.2162,0.2244
+metrics,ResNet-152,lime,insertion,3669,0.7831,0.7793,0.7869
+metrics,ResNet-152,lime,overlap,3662,0.8238,0.8181,0.8296
+metrics,ResNet-152,partition,deletion,3669,0.2544,0.2497,0.2591
+metrics,ResNet-152,partition,insertion,3669,0.759,0.7547,0.7633
+metrics,ResNet-152,partition,overlap,3662,0.7784,0.772,0.7847
+metrics,Stock ResNet-50,kernel,deletion,3668,0.0732,0.0711,0.0752
+metrics,Stock ResNet-50,kernel,insertion,3668,0.4062,0.4022,0.4102
+metrics,Stock ResNet-50,kernel,overlap,3661,0.8175,0.8114,0.8236
+metrics,Stock ResNet-50,lime,deletion,3668,0.0729,0.0707,0.075
+metrics,Stock ResNet-50,lime,insertion,3668,0.4068,0.4028,0.4108
+metrics,Stock ResNet-50,lime,overlap,3661,0.8161,0.8101,0.8222
+metrics,Stock ResNet-50,partition,deletion,3668,0.1326,0.129,0.1363
+metrics,Stock ResNet-50,partition,insertion,3668,0.3284,0.3243,0.3325
+metrics,Stock ResNet-50,partition,overlap,3661,0.6833,0.6764,0.6901
+paired,ResNet-18,kernel,deletion,3668,-0.0042,-0.0052,-0.0031
+paired,ResNet-18,kernel,insertion,3668,-0.0181,-0.0202,-0.016
+paired,ResNet-18,kernel,overlap,3661,-0.0023,-0.0058,0.0013
+paired,ResNet-18,kernel,runtime,3668,0.5546,0.5517,0.5575
+paired,ResNet-18,partition,deletion,3668,0.0191,0.0174,0.0208
+paired,ResNet-18,partition,insertion,3668,-0.041,-0.0437,-0.0382
+paired,ResNet-18,partition,overlap,3661,-0.0131,-0.0175,-0.0087
+paired,ResNet-18,partition,runtime,3668,0.4639,0.4608,0.467
+paired,ResNet-34,kernel,deletion,3669,-0.0038,-0.0049,-0.0028
+paired,ResNet-34,kernel,insertion,3669,-0.0175,-0.0195,-0.0155
+paired,ResNet-34,kernel,overlap,3662,0.0009,-0.0026,0.0045
+paired,ResNet-34,kernel,runtime,3669,0.8657,0.8607,0.8707
+paired,ResNet-34,partition,deletion,3669,0.0239,0.022,0.0258
+paired,ResNet-34,partition,insertion,3669,-0.0472,-0.0501,-0.0443
+paired,ResNet-34,partition,overlap,3662,-0.0231,-0.0276,-0.0186
+paired,ResNet-34,partition,runtime,3669,0.7883,0.783,0.7937
+paired,ResNet-50,kernel,deletion,3669,0.0099,0.0088,0.0111
+paired,ResNet-50,kernel,insertion,3669,-0.0053,-0.0063,-0.0042
+paired,ResNet-50,kernel,overlap,3662,-0.0098,-0.0128,-0.0068
+paired,ResNet-50,kernel,runtime,3669,0.543,0.5198,0.5672
+paired,ResNet-50,partition,deletion,3669,0.0332,0.0314,0.035
+paired,ResNet-50,partition,insertion,3669,-0.0291,-0.0309,-0.0272
+paired,ResNet-50,partition,overlap,3662,-0.0208,-0.0246,-0.017
+paired,ResNet-50,partition,runtime,3669,0.5667,0.5416,0.593
+paired,ResNet-101,kernel,deletion,3667,0.0172,0.0157,0.0186
+paired,ResNet-101,kernel,insertion,3667,-0.0038,-0.0049,-0.0027
+paired,ResNet-101,kernel,overlap,3660,-0.0111,-0.0143,-0.0079
+paired,ResNet-101,kernel,runtime,3667,0.6408,0.6201,0.6623
+paired,ResNet-101,partition,deletion,3667,0.0443,0.0422,0.0463
+paired,ResNet-101,partition,insertion,3667,-0.0239,-0.0256,-0.0222
+paired,ResNet-101,partition,overlap,3660,-0.0311,-0.0351,-0.0271
+paired,ResNet-101,partition,runtime,3667,0.6013,0.5818,0.6214
+paired,ResNet-152,kernel,deletion,3669,0.0162,0.0148,0.0176
+paired,ResNet-152,kernel,insertion,3669,-0.0116,-0.0129,-0.0104
+paired,ResNet-152,kernel,overlap,3662,-0.0207,-0.0242,-0.0171
+paired,ResNet-152,kernel,runtime,3669,0.7517,0.7479,0.7555
+paired,ResNet-152,partition,deletion,3669,0.0341,0.0324,0.0358
+paired,ResNet-152,partition,insertion,3669,-0.0241,-0.0258,-0.0224
+paired,ResNet-152,partition,overlap,3662,-0.0455,-0.0495,-0.0415
+paired,ResNet-152,partition,runtime,3669,0.6938,0.6909,0.6967
+paired,Stock ResNet-50,kernel,deletion,3668,0.0003,-0.0005,0.0011
+paired,Stock ResNet-50,kernel,insertion,3668,-0.0006,-0.002,0.0008
+paired,Stock ResNet-50,kernel,overlap,3661,0.0013,-0.0023,0.005
+paired,Stock ResNet-50,kernel,runtime,3668,0.6726,0.6693,0.676
+paired,Stock ResNet-50,partition,deletion,3668,0.0598,0.0575,0.062
+paired,Stock ResNet-50,partition,insertion,3668,-0.0784,-0.0808,-0.076
+paired,Stock ResNet-50,partition,overlap,3661,-0.1329,-0.1386,-0.1272
+paired,Stock ResNet-50,partition,runtime,3668,0.5795,0.5763,0.5826

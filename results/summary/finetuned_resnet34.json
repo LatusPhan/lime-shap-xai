@@ -9,25 +9,25 @@
   "methods": {
     "kernel": {
       "overlap": {
-        "n": 3669,
-        "mean": 0.8425,
-        "median": 0.9154,
-        "std": 0.1826,
+        "n": 3662,
+        "mean": 0.8441,
+        "median": 0.9158,
+        "std": 0.179,
         "ci95": [
-          0.8366,
-          0.8484
+          0.8383,
+          0.8499
         ],
-        "min": 0.0,
+        "min": 0.0457,
         "max": 1.0
       },
       "excess": {
-        "n": 3669,
-        "mean": 0.341,
-        "median": 0.3424,
-        "std": 0.1793,
+        "n": 3662,
+        "mean": 0.3416,
+        "median": 0.3427,
+        "std": 0.1788,
         "ci95": [
-          0.3352,
-          0.3468
+          0.3358,
+          0.3474
         ],
         "min": -0.3269,
         "max": 0.8293
@@ -83,25 +83,25 @@
     },
     "lime": {
       "overlap": {
-        "n": 3669,
-        "mean": 0.8415,
-        "median": 0.9166,
-        "std": 0.1841,
+        "n": 3662,
+        "mean": 0.8431,
+        "median": 0.9175,
+        "std": 0.1805,
         "ci95": [
-          0.8356,
-          0.8475
+          0.8373,
+          0.849
         ],
-        "min": 0.0,
+        "min": 0.0291,
         "max": 1.0
       },
       "excess": {
-        "n": 3669,
-        "mean": 0.34,
-        "median": 0.3404,
-        "std": 0.1825,
+        "n": 3662,
+        "mean": 0.3407,
+        "median": 0.3407,
+        "std": 0.1821,
         "ci95": [
-          0.3341,
-          0.3459
+          0.3348,
+          0.3466
         ],
         "min": -0.4783,
         "max": 0.8293
@@ -157,25 +157,25 @@
     },
     "partition": {
       "overlap": {
-        "n": 3669,
-        "mean": 0.8185,
-        "median": 0.8754,
-        "std": 0.1906,
+        "n": 3662,
+        "mean": 0.82,
+        "median": 0.8763,
+        "std": 0.1874,
         "ci95": [
-          0.8123,
-          0.8246
+          0.814,
+          0.8261
         ],
-        "min": 0.0,
+        "min": 0.0001,
         "max": 1.0
       },
       "excess": {
-        "n": 3669,
-        "mean": 0.317,
-        "median": 0.3175,
-        "std": 0.1747,
+        "n": 3662,
+        "mean": 0.3176,
+        "median": 0.3179,
+        "std": 0.1743,
         "ci95": [
-          0.3113,
-          0.3226
+          0.3119,
+          0.3232
         ],
         "min": -0.4986,
         "max": 0.8025
@@ -233,78 +233,78 @@
   "right_vs_wrong": {
     "kernel": {
       "overlap": {
-        "n_right": 3178,
-        "n_wrong": 491,
-        "right_mean": 0.8579,
-        "wrong_mean": 0.7424,
-        "gap": 0.1156,
-        "p_one_sided": 2.2642729264114663e-28,
-        "rank_biserial_r": 0.3076
+        "n_right": 3172,
+        "n_wrong": 490,
+        "right_mean": 0.8596,
+        "wrong_mean": 0.7439,
+        "gap": 0.1157,
+        "p_one_sided": 1.6825104069898371e-28,
+        "rank_biserial_r": 0.3086
       },
       "excess": {
-        "n_right": 3178,
-        "n_wrong": 491,
-        "right_mean": 0.3477,
-        "wrong_mean": 0.2971,
-        "gap": 0.0506,
-        "p_one_sided": 1.4849466217735726e-08,
-        "rank_biserial_r": 0.1552
+        "n_right": 3172,
+        "n_wrong": 490,
+        "right_mean": 0.3484,
+        "wrong_mean": 0.2977,
+        "gap": 0.0507,
+        "p_one_sided": 1.429146381482808e-08,
+        "rank_biserial_r": 0.1556
       }
     },
     "lime": {
       "overlap": {
-        "n_right": 3178,
-        "n_wrong": 491,
-        "right_mean": 0.8568,
-        "wrong_mean": 0.7425,
-        "gap": 0.1143,
-        "p_one_sided": 3.2397508794106406e-27,
-        "rank_biserial_r": 0.3008
+        "n_right": 3172,
+        "n_wrong": 490,
+        "right_mean": 0.8584,
+        "wrong_mean": 0.744,
+        "gap": 0.1144,
+        "p_one_sided": 2.441700104579758e-27,
+        "rank_biserial_r": 0.3018
       },
       "excess": {
-        "n_right": 3178,
-        "n_wrong": 491,
-        "right_mean": 0.3466,
-        "wrong_mean": 0.2973,
+        "n_right": 3172,
+        "n_wrong": 490,
+        "right_mean": 0.3473,
+        "wrong_mean": 0.2979,
         "gap": 0.0494,
-        "p_one_sided": 2.0689020520641703e-07,
-        "rank_biserial_r": 0.1417
+        "p_one_sided": 2.007341463632492e-07,
+        "rank_biserial_r": 0.1421
       }
     },
     "partition": {
       "overlap": {
-        "n_right": 3178,
-        "n_wrong": 491,
-        "right_mean": 0.8325,
-        "wrong_mean": 0.7276,
+        "n_right": 3172,
+        "n_wrong": 490,
+        "right_mean": 0.8341,
+        "wrong_mean": 0.7291,
         "gap": 0.105,
-        "p_one_sided": 4.9866408823667436e-23,
-        "rank_biserial_r": 0.2747
+        "p_one_sided": 3.954989933109108e-23,
+        "rank_biserial_r": 0.2757
       },
       "excess": {
-        "n_right": 3178,
-        "n_wrong": 491,
-        "right_mean": 0.3223,
-        "wrong_mean": 0.2823,
+        "n_right": 3172,
+        "n_wrong": 490,
+        "right_mean": 0.3229,
+        "wrong_mean": 0.2829,
         "gap": 0.04,
-        "p_one_sided": 1.0508616556140884e-05,
-        "rank_biserial_r": 0.1191
+        "p_one_sided": 1.0395297412028937e-05,
+        "rank_biserial_r": 0.1193
       }
     }
   },
   "paired": {
     "overlap_kernel_vs_lime": {
-      "n": 3669,
+      "n": 3662,
       "median_difference": 0.0,
       "wilcoxon_p": 0.9870560359117538
     },
     "overlap_kernel_vs_partition": {
-      "n": 3669,
+      "n": 3662,
       "median_difference": 0.0003,
       "wilcoxon_p": 2.0541379701950962e-21
     },
     "overlap_lime_vs_partition": {
-      "n": 3669,
+      "n": 3662,
       "median_difference": 0.0,
       "wilcoxon_p": 2.1872095723931492e-19
     },

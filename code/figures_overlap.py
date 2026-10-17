@@ -3,8 +3,8 @@
 Runs after lime_run.py and shap_run.py, from the CSVs they wrote. Each map is rebuilt
 from the per-region weights stored in the row, so no image is explained again.
 
-One row per image: the photo, then one map per method. Blue is evidence for the predicted
-class, red against it. The animal is outlined in black, the top five regions in white, and
+One row per image: the photo, then one map per method. Red is evidence for the predicted
+class, blue against it. The animal is outlined in black, the top five regions in white, and
 each title carries that method's overlap, so the number and the picture sit together.
 
     python figures_overlap.py --arch resnet50                  ten best and ten worst
@@ -98,7 +98,7 @@ def extremes(frame, score, count):
 
 
 def draw(axis, image, segments, weights, truth, title, colour):
-    """The photo under its signed map: blue is evidence for the class, red against it."""
+    """The photo under its signed map: red is evidence for the class, blue against it."""
     attribution = weights[segments]
     limit = float(np.abs(attribution).max()) or 1.0
     axis.imshow(image)
@@ -135,9 +135,10 @@ def panels(frame, images, name, note):
         for column, method in enumerate(methods, start=1):
             record = block.loc[method]
             fit = f"  R2 {record.fit_r2:.2f}" if np.isfinite(record.fit_r2) else ""
+            shown = f"{record.overlap:.2f}" if np.isfinite(record.overlap) else "n/a, empty mask"
             draw(axes[index][column], picture, segments,
                  np.array(str(record.weights).split(), dtype=float), truth,
-                 f"{method}  overlap {record.overlap:.2f}{fit}", COLOURS[method])
+                 f"{method}  overlap {shown}{fit}", COLOURS[method])
     figure.suptitle(note, x=0.01, ha="left", fontsize=12)
     save(figure, f"{name}.png")
 

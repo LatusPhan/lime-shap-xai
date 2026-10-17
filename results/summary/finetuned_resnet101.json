@@ -1,0 +1,491 @@
+{
+  "model": "finetuned",
+  "arch": "resnet101",
+  "images": 3669,
+  "expected": 3669,
+  "devices": [
+    "cuda"
+  ],
+  "methods": {
+    "kernel": {
+      "overlap": {
+        "n": 3662,
+        "mean": 0.8307,
+        "median": 0.8844,
+        "std": 0.1749,
+        "ci95": [
+          0.8251,
+          0.8364
+        ],
+        "min": 0.0,
+        "max": 1.0
+      },
+      "excess": {
+        "n": 3662,
+        "mean": 0.3283,
+        "median": 0.3335,
+        "std": 0.175,
+        "ci95": [
+          0.3226,
+          0.3339
+        ],
+        "min": -0.3229,
+        "max": 0.8327
+      },
+      "deletion": {
+        "n": 3669,
+        "mean": 0.2353,
+        "median": 0.2159,
+        "std": 0.1518,
+        "ci95": [
+          0.2304,
+          0.2402
+        ],
+        "min": 0.0066,
+        "max": 0.8755
+      },
+      "insertion": {
+        "n": 3669,
+        "mean": 0.8646,
+        "median": 0.8918,
+        "std": 0.1005,
+        "ci95": [
+          0.8613,
+          0.8678
+        ],
+        "min": 0.1781,
+        "max": 0.9874
+      },
+      "additivity": {
+        "n": 3669,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "min": 0.0,
+        "max": 0.0
+      },
+      "runtime_s": {
+        "n": 3669,
+        "mean": 2.1478,
+        "median": 2.05,
+        "std": 0.3148,
+        "ci95": [
+          2.1376,
+          2.158
+        ],
+        "min": 1.85,
+        "max": 5.6
+      }
+    },
+    "lime": {
+      "overlap": {
+        "n": 3662,
+        "mean": 0.8417,
+        "median": 0.9005,
+        "std": 0.1715,
+        "ci95": [
+          0.8361,
+          0.8473
+        ],
+        "min": 0.064,
+        "max": 1.0
+      },
+      "excess": {
+        "n": 3662,
+        "mean": 0.3392,
+        "median": 0.3427,
+        "std": 0.1769,
+        "ci95": [
+          0.3335,
+          0.345
+        ],
+        "min": -0.3217,
+        "max": 0.8293
+      },
+      "deletion": {
+        "n": 3669,
+        "mean": 0.2181,
+        "median": 0.2007,
+        "std": 0.1371,
+        "ci95": [
+          0.2137,
+          0.2226
+        ],
+        "min": 0.0042,
+        "max": 0.7605
+      },
+      "insertion": {
+        "n": 3669,
+        "mean": 0.8684,
+        "median": 0.891,
+        "std": 0.0927,
+        "ci95": [
+          0.8654,
+          0.8714
+        ],
+        "min": 0.2065,
+        "max": 0.9869
+      },
+      "additivity": {
+        "n": 3669,
+        "mean": 0.2993,
+        "median": 0.2982,
+        "std": 0.1642,
+        "ci95": [
+          0.2939,
+          0.3046
+        ],
+        "min": 0.0005,
+        "max": 0.89
+      },
+      "runtime_s": {
+        "n": 3669,
+        "mean": 1335.4811,
+        "median": 2.92,
+        "std": 17290.4952,
+        "ci95": [
+          775.9946,
+          1894.9677
+        ],
+        "min": 2.35,
+        "max": 465623.96
+      }
+    },
+    "partition": {
+      "overlap": {
+        "n": 3662,
+        "mean": 0.8107,
+        "median": 0.855,
+        "std": 0.1844,
+        "ci95": [
+          0.8047,
+          0.8167
+        ],
+        "min": 0.027,
+        "max": 1.0
+      },
+      "excess": {
+        "n": 3662,
+        "mean": 0.3082,
+        "median": 0.3108,
+        "std": 0.1786,
+        "ci95": [
+          0.3024,
+          0.314
+        ],
+        "min": -0.3701,
+        "max": 0.8327
+      },
+      "deletion": {
+        "n": 3669,
+        "mean": 0.2624,
+        "median": 0.2441,
+        "std": 0.1608,
+        "ci95": [
+          0.2572,
+          0.2676
+        ],
+        "min": 0.0083,
+        "max": 0.7909
+      },
+      "insertion": {
+        "n": 3669,
+        "mean": 0.8445,
+        "median": 0.8745,
+        "std": 0.1134,
+        "ci95": [
+          0.8408,
+          0.8481
+        ],
+        "min": 0.122,
+        "max": 0.9873
+      },
+      "additivity": {
+        "n": 3669,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "min": 0.0,
+        "max": 0.0
+      },
+      "runtime_s": {
+        "n": 3669,
+        "mean": 2.0217,
+        "median": 1.92,
+        "std": 0.3677,
+        "ci95": [
+          2.0099,
+          2.0336
+        ],
+        "min": 1.7,
+        "max": 10.64
+      }
+    }
+  },
+  "right_vs_wrong": {
+    "kernel": {
+      "overlap": {
+        "n_right": 3397,
+        "n_wrong": 265,
+        "right_mean": 0.8364,
+        "wrong_mean": 0.7583,
+        "gap": 0.078,
+        "p_one_sided": 1.015999233343727e-07,
+        "rank_biserial_r": 0.1914
+      },
+      "excess": {
+        "n_right": 3397,
+        "n_wrong": 265,
+        "right_mean": 0.3329,
+        "wrong_mean": 0.2687,
+        "gap": 0.0642,
+        "p_one_sided": 2.413964850257879e-08,
+        "rank_biserial_r": 0.201
+      }
+    },
+    "lime": {
+      "overlap": {
+        "n_right": 3397,
+        "n_wrong": 265,
+        "right_mean": 0.8482,
+        "wrong_mean": 0.7582,
+        "gap": 0.0901,
+        "p_one_sided": 1.4251210209788242e-10,
+        "rank_biserial_r": 0.2323
+      },
+      "excess": {
+        "n_right": 3397,
+        "n_wrong": 265,
+        "right_mean": 0.3447,
+        "wrong_mean": 0.2685,
+        "gap": 0.0762,
+        "p_one_sided": 2.017663010160766e-10,
+        "rank_biserial_r": 0.2303
+      }
+    },
+    "partition": {
+      "overlap": {
+        "n_right": 3397,
+        "n_wrong": 265,
+        "right_mean": 0.8177,
+        "wrong_mean": 0.7207,
+        "gap": 0.097,
+        "p_one_sided": 1.0629930675430459e-10,
+        "rank_biserial_r": 0.2339
+      },
+      "excess": {
+        "n_right": 3397,
+        "n_wrong": 265,
+        "right_mean": 0.3142,
+        "wrong_mean": 0.2311,
+        "gap": 0.0831,
+        "p_one_sided": 2.3101342548706224e-12,
+        "rank_biserial_r": 0.2547
+      }
+    }
+  },
+  "paired": {
+    "overlap_kernel_vs_lime": {
+      "n": 3660,
+      "median_difference": 0.0,
+      "wilcoxon_p": 1.318267021984004e-12
+    },
+    "overlap_kernel_vs_partition": {
+      "n": 3660,
+      "median_difference": 0.0,
+      "wilcoxon_p": 1.1517222894947865e-15
+    },
+    "overlap_lime_vs_partition": {
+      "n": 3660,
+      "median_difference": 0.001,
+      "wilcoxon_p": 5.138110019994679e-45
+    },
+    "deletion_kernel_vs_lime": {
+      "n": 3667,
+      "median_difference": 0.0054,
+      "wilcoxon_p": 3.749093050489077e-101
+    },
+    "deletion_kernel_vs_partition": {
+      "n": 3667,
+      "median_difference": -0.0182,
+      "wilcoxon_p": 8.314179580061222e-149
+    },
+    "deletion_lime_vs_partition": {
+      "n": 3667,
+      "median_difference": -0.0287,
+      "wilcoxon_p": 0.0
+    },
+    "insertion_kernel_vs_lime": {
+      "n": 3667,
+      "median_difference": -0.0002,
+      "wilcoxon_p": 1.5079843503666724e-08
+    },
+    "insertion_kernel_vs_partition": {
+      "n": 3667,
+      "median_difference": 0.009,
+      "wilcoxon_p": 1.3647928608372975e-124
+    },
+    "insertion_lime_vs_partition": {
+      "n": 3667,
+      "median_difference": 0.0105,
+      "wilcoxon_p": 9.632581048430522e-166
+    },
+    "runtime_s_kernel_vs_lime": {
+      "n": 3667,
+      "median_difference": -0.85,
+      "wilcoxon_p": 0.0
+    },
+    "runtime_s_kernel_vs_partition": {
+      "n": 3667,
+      "median_difference": 0.14,
+      "wilcoxon_p": 0.0
+    },
+    "runtime_s_lime_vs_partition": {
+      "n": 3667,
+      "median_difference": 0.99,
+      "wilcoxon_p": 0.0
+    }
+  },
+  "agreement": {
+    "kernel_vs_lime": {
+      "rank_correlation": {
+        "n": 3667,
+        "mean": 0.6515,
+        "median": 0.6606,
+        "std": 0.1327,
+        "ci95": [
+          0.6472,
+          0.6558
+        ],
+        "min": 0.1034,
+        "max": 0.974
+      },
+      "top5_jaccard": {
+        "n": 3667,
+        "mean": 0.6874,
+        "median": 0.6667,
+        "std": 0.2098,
+        "ci95": [
+          0.6806,
+          0.6942
+        ],
+        "min": 0.1111,
+        "max": 1.0
+      }
+    },
+    "kernel_vs_partition": {
+      "rank_correlation": {
+        "n": 3667,
+        "mean": 0.5704,
+        "median": 0.5792,
+        "std": 0.1361,
+        "ci95": [
+          0.566,
+          0.5748
+        ],
+        "min": -0.1137,
+        "max": 0.898
+      },
+      "top5_jaccard": {
+        "n": 3667,
+        "mean": 0.5294,
+        "median": 0.4286,
+        "std": 0.2021,
+        "ci95": [
+          0.5228,
+          0.5359
+        ],
+        "min": 0.0,
+        "max": 1.0
+      }
+    },
+    "lime_vs_partition": {
+      "rank_correlation": {
+        "n": 3667,
+        "mean": 0.639,
+        "median": 0.6555,
+        "std": 0.1291,
+        "ci95": [
+          0.6348,
+          0.6432
+        ],
+        "min": 0.0482,
+        "max": 0.9175
+      },
+      "top5_jaccard": {
+        "n": 3667,
+        "mean": 0.5524,
+        "median": 0.6667,
+        "std": 0.2061,
+        "ci95": [
+          0.5457,
+          0.5591
+        ],
+        "min": 0.0,
+        "max": 1.0
+      }
+    }
+  },
+  "stability": {
+    "kernel": {
+      "seed_rho": {
+        "n": 200,
+        "mean": 0.6107,
+        "median": 0.6134,
+        "std": 0.1495,
+        "ci95": [
+          0.59,
+          0.6314
+        ],
+        "min": 0.2468,
+        "max": 0.9261
+      },
+      "seed_jac": {
+        "n": 200,
+        "mean": 0.6894,
+        "median": 0.6667,
+        "std": 0.192,
+        "ci95": [
+          0.6628,
+          0.7161
+        ],
+        "min": 0.25,
+        "max": 1.0
+      }
+    },
+    "lime": {
+      "seed_rho": {
+        "n": 200,
+        "mean": 0.7544,
+        "median": 0.7759,
+        "std": 0.1165,
+        "ci95": [
+          0.7382,
+          0.7705
+        ],
+        "min": 0.3242,
+        "max": 0.9796
+      },
+      "seed_jac": {
+        "n": 200,
+        "mean": 0.8116,
+        "median": 0.8333,
+        "std": 0.1696,
+        "ci95": [
+          0.7881,
+          0.8351
+        ],
+        "min": 0.3393,
+        "max": 1.0
+      }
+    }
+  }
+}
